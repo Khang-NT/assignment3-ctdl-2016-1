@@ -24,10 +24,19 @@ void echoMenu() {
   std::cout << "========================================================" << '\n';
 }
 
+int getInt() {
+  int value;
+  while (!(std::cin >> value)) {
+    std::cin.clear();
+    std::cin.ignore(10000, '\n');
+  }
+  return value;
+}
+
 int getSelection() {
   std::cout << "Enter your selection: ";
   int selection = 0;
-  std::cin >> selection;
+  selection = getInt();
   return selection;
 }
 
@@ -46,6 +55,9 @@ int main() {
     int selection = getSelection();
     // navigate to sub section or print invalid selection
     switch (selection) {
+      case 5:
+        e5();
+        break;
       default:
         std::cout << "Invalid selection" << '\n';
     }
