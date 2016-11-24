@@ -1,0 +1,14 @@
+language: cpp
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+      - gcc-4.8
+compiler:
+  - gcc
+
+script:
+  - echo "Test if build success with g++ version: $(g++ --version)"
+  - cd main && make clean && make
