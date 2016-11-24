@@ -8,7 +8,16 @@ addons:
       - gcc-4.8
 compiler:
   - gcc
+install:
+  # remove symlinks
+  - sudo rm /usr/bin/cpp /usr/bin/gcc /usr/bin/g++
 
+  # replace symlinks with gcc, g++ 4.8
+  - sudo ln -s /usr/bin/cpp-4.8 /usr/bin/cpp
+  - sudo ln -s /usr/bin/gcc-4.8 /usr/bin/gcc
+  - sudo ln -s /usr/bin/g++-4.8 /usr/bin/g++
+  - g++ --version
+  - gcc --version
 script:
-  - echo "Test if build success with g++ version: $(g++ --version)"
+  - echo "Test if build success with g++ 4.8.x"
   - cd main && make clean && make
