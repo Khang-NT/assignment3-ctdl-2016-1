@@ -22,7 +22,7 @@ void Graph::Print() {
 }
 
 /**
- * Helper func: Parse graph from file, using {@link ReadArrayInputOfGraph}.
+ * Reusable func: Parse graph from file, using {@link ReadArrayInputOfGraph}.
  * @param fileName The relative path to file contain graph data.
  */
 Graph* graphReader(string fileName) {
@@ -57,9 +57,42 @@ void e5() {
 }
 
 /**
+ * Traveling recursive in graph and count the number of curcuits.
+ * @param currentVertex The vertex be visited.
+ * @param beginningVertex The beginning vertex to detect curcuits.
+ */
+int countCircuitsInGraph(Vertex* currentVertex, Vertex* beginningVertex) {
+  int count = 0;
+  currentVertex->processed = 1;
+  Edge* edge = currentVertex->firstEdge;
+  while (edge) {
+    if (edge->destination->data == beginningVertex->data)
+      count++;
+    else if (edge->destination->processed == 0)
+      count += countCircuitsInGraph(edge->destination, beginningVertex);
+    edge = edge->nextEdge;
+  }
+  currentVertex->processed = 0;
+  return count;
+}
+
+/**
  * Implementation of func e14() in skeleton.h
  */
 void e14() {
   Graph* graph = graphReader("input/E14.txt");
   graph->Print();
+  // travel in graph recursively, count the number of circuits
+  Vertex* vertex = graph->gHead;
+  Vertex* pDel;
+  int count = 0;
+  while (vertex) {
+    count += countCircuitsInGraph(vertex, vertex);
+    pDel = vertex;
+    vertex = vertex->nextVertex;
+    pDel->processed = 1;
+    //graph->RemoveVertex(pDel);
+  }
+
+  std::cout << "Number of circuits: " << count << '\n';
 }

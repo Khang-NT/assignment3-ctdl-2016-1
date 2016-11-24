@@ -58,6 +58,9 @@ int main() {
       case 5:
         e5();
         break;
+      case 14:
+        e14();
+        break;
       default:
         std::cout << "Invalid selection" << '\n';
     }
