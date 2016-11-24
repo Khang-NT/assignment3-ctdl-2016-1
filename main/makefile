@@ -1,6 +1,6 @@
 all: app_flow
 clean:
-	rm *.o app_flow.bin
+	rm -f *.o app_flow.bin
 run:
 	chmod +x app_flow && ./app_flow
 
