@@ -24,9 +24,38 @@ void echoMenu() {
   std::cout << "========================================================" << '\n';
 }
 
+int getSelection() {
+  std::cout << "Enter your selection: ";
+  int selection = 0;
+  std::cin >> selection;
+  return selection;
+}
 
+void echoStopMenu() {
+  std::cout << "========================================================" << '\n';
+  std::cout << "                  Do you want to stop?                  " << '\n';
+  std::cout << "0. No" << '\n';
+  std::cout << "1. Yes" << '\n';
+  std::cout << "========================================================" << '\n';
+}
 
 int main() {
-  echoMenu();
+  bool stop = false;
+  while (!stop) {
+    echoMenu();
+    int selection = getSelection();
+    // navigate to sub section or print invalid selection
+    switch (selection) {
+      default:
+        std::cout << "Invalid selection" << '\n';
+    }
+
+    echoStopMenu();
+    do {
+      selection = getSelection();
+    } while(selection < 0 || selection > 1);
+
+    stop = selection == 1;
+  }
   return 0;
 }
