@@ -1,11 +1,11 @@
 all: app_flow
 clean:
-	rm *.o app_flow
+	rm *.o app_flow.bin
 run:
 	chmod +x app_flow && ./app_flow
 
 app_flow: app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o
-	g++ app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o -o app_flow
+	g++ app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o -o app_flow.bin
 
 app_flow.o: app_flow.cpp
 	g++ -c app_flow.cpp
