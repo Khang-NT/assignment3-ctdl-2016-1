@@ -1,4 +1,5 @@
 ## Assignment 3
+[![Build Status](https://travis-ci.org/Khang-NT/assignment3-ctdl-2016-1.svg?branch=ass3_implement)](https://travis-ci.org/Khang-NT/assignment3-ctdl-2016-1)
 ----------------
 ### TODOs
 Finish these missions:  
