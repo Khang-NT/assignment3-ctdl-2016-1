@@ -5,10 +5,22 @@
 	Purpose: Implementation for the Heap class
 
 	@author Kien Huynh
-	@version 1.1 02-10-2016
+	@version 1.3 24-11-2016
 ***************************************************/
 
 #include "Heap.h"
+Heap::Heap() {
+	heapPtr = NULL;
+	last = -1;
+	maxSize = HEAP_MAX;
+	size = 0;
+}
+
+Heap::~Heap(){
+	delete heapPtr;
+	heapPtr = NULL;
+}
+
 void Heap::swap(int a, int b) {
 	int tempVal = heapPtr[a];
 	heapPtr[a] = heapPtr[b];
@@ -43,33 +55,24 @@ void Heap::ReHeapDown(int position) {
 	}
 }
 
-Heap Heap::ArrayToHeap(int* arr, int length){
-	Heap heap = Heap();
-	heap.size = 0;
-	heap.last = -1;
-	heap.heapPtr = new int[HEAP_MAX];
+void Heap::ArrayToHeap(int* arr, int length){
+	size = 0;
+	last = -1;
+	heapPtr = new int[HEAP_MAX];
 	for (int i = 0; i < length; i++) {
-		if (!heap.DataExist(arr[i])) {
-			heap.size++;
-			heap.heapPtr[heap.size-1] = arr[i];
-			if (heap.size == HEAP_MAX) {
+		if (!DataExist(arr[i])) {
+			size++;
+			heapPtr[size - 1] = arr[i];
+			if (size == HEAP_MAX) {
 				break;
 			}
 		}
 	}
 
-	for (int i = 0; i < heap.size; i++) {
-		heap.ReHeapUp(i);
-		heap.last++;
+	for (int i = 0; i < size; i++) {
+		ReHeapUp(i);
+		last++;
 	}
-	return heap;
-}
-
-Heap::Heap() {
-	heapPtr = NULL;
-	last = -1;
-	maxSize = HEAP_MAX;
-	size = 0;
 }
 
 int Heap::operator [](const int i){

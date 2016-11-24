@@ -10,6 +10,7 @@
 
 #include "AVLTree.h"
 
+
 Node* AVLTree::RotateRight() {
 	Node* tmpPtr = root->left;
 	root->left = tmpPtr->right;
@@ -176,7 +177,7 @@ void AVLTree::DeleteLeftBalance(bool& shorter) {
 	}
 	else {
 		Node* leftTree = root->left;
-		if (leftTree->balance = RIGHT) {
+		if ((leftTree->balance = RIGHT)) {
 			Node* rightTree = leftTree->right;
 			if (rightTree->balance == RIGHT) {
 				leftTree->balance = LEFT;
@@ -268,6 +269,11 @@ AVLTree::AVLTree(Node* _root) {
 	root = _root;
 }
 
+AVLTree::~AVLTree() {
+	delete root;
+	root = NULL;
+}
+
 bool AVLTree::AVLInsert(int newData) {
 	if (NodeExist(newData)) {
 		return false;
@@ -278,7 +284,7 @@ bool AVLTree::AVLInsert(int newData) {
 	return true;
 }
 
-bool AVLTree::AVLInsert(Node* newPtr) 
+bool AVLTree::AVLInsert(Node* newPtr)
 {
 	if (newPtr == NULL) {
 		return false;
@@ -302,14 +308,11 @@ void AVLTree::PrintAVL() {
 	root->PrintNode();
 }
 
-AVLTree AVLTree::ArrayToAVL(int arr[], int length) {
-	AVLTree tree = AVLTree();
+void AVLTree::ArrayToAVL(int arr[], int length) {
 	for (int i = 0; i < length; i++) {
 		Node* newPtr = new Node(arr[i]);
-		tree.AVLInsert(newPtr);
-		//tree.PrintAVL();
+		AVLInsert(newPtr);
 	}
-	return tree;
 }
 
 bool AVLTree::IsEmpty() {

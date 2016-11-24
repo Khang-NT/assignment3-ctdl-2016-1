@@ -5,7 +5,7 @@
 	Purpose: Header file for the Heap class
 
 	@author Kien Huynh
-	@version 1.1 02-10-2016
+	@version 1.3 24-11-2016
 ***************************************************/
 
 /**
@@ -57,21 +57,25 @@ public:
 	*/
 	int operator[](int);
 
+	/**
+	* \brief Default constructor with no argument
+	*/
+	Heap();
+
+	/**
+	* \brief Destructor
+	*/
+	~Heap();
 
 	/**
 	* \brief Create a Heap from an array \c arr with length \c len \n
 	* Duplicate data in \c arr will be skipped
 	* \param arr integer array of length \c len
 	* \param len integer indicates the length of \c arr
-	* \return A newly created heap
 	*/
-	static Heap ArrayToHeap(int* arr, int len);
+	void ArrayToHeap(int* arr, int len);
 
-	/**
-	* \brief Default constructor with no argument
-	*/
-	Heap();
-
+	
 	/**
 	* \brief Check if the Heap is empty or not. \n
 	* The name is obvious enough.

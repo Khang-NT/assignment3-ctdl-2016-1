@@ -68,6 +68,11 @@ public:
 	Node(int);
 
 	/**
+	* \brief Destructor
+	*/
+	~Node();
+
+	/**
 	* \brief Print this Node and every of its children in LNR order.
 	*/
 	void PrintNode(int indent = 0);

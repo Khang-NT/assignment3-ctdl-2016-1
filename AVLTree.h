@@ -13,7 +13,7 @@
 */
 
 #ifndef AVLTREE_H
-#define ALVTREE_H
+#define AVLTREE_H
 #include <iostream>
 #include "Node.h"
 using namespace std;
@@ -63,6 +63,11 @@ public:
 	AVLTree();
 
 	/**
+	* \brief Destructor
+	*/
+	~AVLTree();
+
+	/**
 	* \brief Constructor that takes a Node* pointer as a root
 	*/
 	AVLTree(Node* _root);
@@ -109,13 +114,9 @@ public:
 
 	/**
 	* \brief Convert an int array to AVL
-	* 
-	* \b Example \b usage \n 
-	* <tt>int arr[5] = { 1, 3, 3, 4, 5 }; \n
-	* AVLTree tree = AVLTree::ArrayToAVL(arr, 5);
 	* </tt>
 	*/
-	static AVLTree ArrayToAVL(int arr[], int length);
+	void ArrayToAVL(int arr[], int length);
 
 	/**
 	* \brief Check if the tree is empty
