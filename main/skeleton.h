@@ -1,6 +1,8 @@
 #ifndef SKELETION_H
 #define SKELETION_H
 
+/* Define entrance func foreach missions */
+
 void e1();
 void e2();
 void e3();
@@ -17,5 +19,6 @@ void e13();
 void e14();
 void e15();
 void e16();
+void e17();
 
 #endif
