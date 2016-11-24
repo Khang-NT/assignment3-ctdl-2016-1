@@ -48,6 +48,7 @@ Graph* graphReader(string fileName) {
 
 /**
  * Implementation of func e5() in skeleton.h
+ * Mission: Print Graph
  */
 void e5() {
   Graph* graph = graphReader("input/E5.txt");
@@ -78,6 +79,7 @@ int countCircuitsInGraph(Vertex* currentVertex, Vertex* beginningVertex) {
 
 /**
  * Implementation of func e14() in skeleton.h
+ * Mission: Count the number of circuits in a Graph
  */
 void e14() {
   Graph* graph = graphReader("input/E14.txt");
@@ -95,4 +97,12 @@ void e14() {
   }
 
   std::cout << "Number of circuits: " << count << '\n';
+}
+
+/**
+ * Implementation of func e13() in skeleton.h
+ * Mission: Convert a Heap tree into an Adjacency Matrix
+ */
+void e13() {
+
 }
