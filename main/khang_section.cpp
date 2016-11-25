@@ -1,6 +1,9 @@
 #include "skeleton.h"
 #include "../InputReader.h"
 #include "../Graph.h"
+#include "../Heap.h"
+#include <iostream>
+#include <iomanip>
 
 /**
  * Implementation of Graph::Print();
@@ -99,10 +102,35 @@ void e14() {
   std::cout << "Number of circuits: " << count << '\n';
 }
 
+template<typename T> void printTableCell(T t, int cellWidth) {
+  std::cout << left << std::setw(cellWidth) << std::setfill(' ') << t;
+}
+
 /**
  * Implementation of func e13() in skeleton.h
  * Mission: Convert a Heap tree into an Adjacency Matrix
  */
 void e13() {
+  int* arr;
+  int count;
+  ReadArrayInput("input/E13.txt", arr, count);
+  Heap heap;
+  heap.ArrayToHeap(arr, count);
 
+  // Table configs
+  const int cellWidth  = 5;
+  printTableCell("", cellWidth);
+  for (size_t i = 0; i < heap.GetSize(); i++) {
+    printTableCell(heap[i], cellWidth);
+  }
+  std::cout << "\n";
+  for (size_t i = 0; i < heap.GetSize(); i++) {
+    printTableCell(heap[i], cellWidth);
+    for (size_t j = 0; j < heap.GetSize(); j++) {
+      if (j == i)  printTableCell("-", cellWidth);
+      else if ((j + 1) / 2 == (i + 1) || (i + 1) / 2 == (j + 1)) printTableCell(1, cellWidth);
+      else printTableCell("-", cellWidth);
+    }
+    std::cout << "\n";
+  }
 }

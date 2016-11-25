@@ -16,8 +16,8 @@ Finish these missions:
 * [ ] 10. Convert a Heap tree into a Graph  
 * [ ] 11. Convert an Adjacency Matrix into a Graph  
 * [ ] 12. Convert an AVL tree into an Adjacency Matrix  
-* [ ] 13. Convert a Heap tree into an Adjacency Matrix  
-* [x] 14. **_Count the number of circuits in a Graph_**  
+* [x] **13. _Convert a Heap tree into an Adjacency Matrix_**  
+* [x] **14. _Count the number of circuits in a Graph_**  
 * [ ] 15. Convert a Graph into an Adjacency Matrix  
 * [ ] 16. Check if a Graph is strongly connected  
 * [ ] 17. Check if an Adjacency Matrix is AVL tree  
