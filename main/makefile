@@ -4,8 +4,9 @@ clean:
 run:
 	chmod +x app_flow && ./app_flow
 
-app_flow: app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o khang_section.o
-	g++ app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o khang_section.o -o app_flow.bin
+app_flow: app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o khang_section.o lan_section.o
+	g++ app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o khang_section.o \
+		lan_section.o -o app_flow.bin
 
 app_flow.o: app_flow.cpp
 	g++ -c app_flow.cpp
@@ -27,3 +28,6 @@ InputHeader.o: ../InputHeader.cpp
 
 khang_section.o: khang_section.cpp
 	g++ -c khang_section.cpp
+
+lan_section.o: lan_section.cpp
+	g++ -c lan_section.cpp

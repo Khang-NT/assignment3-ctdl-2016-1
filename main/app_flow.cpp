@@ -55,8 +55,20 @@ int main() {
     int selection = getSelection();
     // navigate to sub section or print invalid selection
     switch (selection) {
+      case 1:
+        e1();
+        break;
+      case 3:
+        e3();
+        break;
       case 5:
         e5();
+        break;
+      case 10:
+        e10();
+        break;
+      case 11:
+        e11();
         break;
       case 13:
         e13();

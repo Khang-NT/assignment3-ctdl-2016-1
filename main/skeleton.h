@@ -5,7 +5,9 @@
 #include "../InputReader.h"
 #include "../Graph.h"
 #include "../Heap.h"
-/* Define entrance func foreach missions */
+#include "../Node.h"
+#include "../AVLTree.h"
+/* Define entrance funcs foreach missions */
 
 void e1();
 void e2();
@@ -30,6 +32,7 @@ void e17();
 /**
  * Reusable func: Parse graph from file, using {@link ReadArrayInputOfGraph}.
  * @param fileName The relative path to file contain graph data ("input/E13.txt", e.g).
+ * @return The (pointer of) graph which has data given in input file.
  */
 Graph* graphReader(string fileName);
 
