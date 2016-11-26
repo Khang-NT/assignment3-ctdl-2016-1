@@ -21,3 +21,6 @@ install:
 script:
   - echo "Test if build success with g++ 4.8.x"
   - cd main && make clean && make
+branches:
+  only:
+  - ass3_implement
