@@ -325,9 +325,9 @@ bool AVLTree::IsEmpty() {
 }
 
 bool AVLTree::NodeExist(int nodeData) {
-	return root->HasNode(nodeData);
+	return root && root->HasNode(nodeData);
 }
 
 bool AVLTree::NodeExist(Node* node) {
-	return root->HasNode(node->data);
+	return root && root->HasNode(node->data);
 }
