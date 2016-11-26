@@ -1,9 +1,4 @@
 #include "skeleton.h"
-#include "../InputReader.h"
-#include "../Graph.h"
-#include "../Heap.h"
-#include <iostream>
-#include <iomanip>
 
 /**
  * Implementation of Graph::Print();
@@ -102,8 +97,15 @@ void e14() {
   std::cout << "Number of circuits: " << count << '\n';
 }
 
-template<typename T> void printTableCell(T t, int cellWidth) {
-  std::cout << left << std::setw(cellWidth) << std::setfill(' ') << t;
+/**
+ * Reusable func: Print content in space with fixed width and align to left.
+ * @param content The content to be printed.
+ * @param cellWidth The width of cell contain the content.
+ *
+ * Generic type T - any type has operator "<<".
+ */
+template<typename T> void printTableCell(T content, int cellWidth) {
+  std::cout << left << std::setw(cellWidth) << std::setfill(' ') << content;
 }
 
 /**
