@@ -54,33 +54,6 @@ int Prime(Node* t) {
 	return result;
 }
 
-void maxHeapify(int *a, int i, int n)
-{
-	int j, temp;
-	temp = a[i];
-	j = 2 * i;
-	while (j <= n) {
-		if (j < n && a[j + 1] > a[j])
-			j = j + 1;
-		if (temp > a[j])
-			break;
-		else if (temp <= a[j]) {
-			a[j / 2] = a[j];
-			j = 2 * j;
-		}
-	}
-	a[j / 2] = temp;
-}
-
-void buildMaxheap(int *a, int n)
-{
-	int i;
-	for (i = n / 2; i >= 1; i--) {
-		maxHeapify(a, i, n);
-	}
-}
-
-
 void e1() {
   int n;
   int* arr;
@@ -120,39 +93,33 @@ void e3() {
 }
 
 void e10() {
-  // wait to fix.
+  Heap heap = Heap();
+	Graph gph = Graph();
+	int *a;
+	int count;
+	ReadArrayInput("input/E10.txt", a, count);
 
-  // Heap heap = Heap();
-	// Graph gph = Graph();
-	// int *a;
-	// int count;
-	// ReadArrayInput("input/E10.txt", a, count);
-  //
-	// a[count] = a[0];
-	// buildMaxheap(a, count);
-  //
-	// for (int i = 1; i <= count; i++) {
-  //
-	// 	heap.InsertHeap(a[i]);
-	// 	gph.InsertVertex(a[i]);
-	// }
-	// heap.PrintHeapTree();
-	// heap.PrintHeapLinear();
-	// cout << endl;
-  //
-	// for (int i = 1; i <= count / 2; i++) {
-	// 	int t1 = 2 * i;
-	// 	int t2 = 2 * i + 1;
-	// 	gph.InsertEdge(a[i], a[t1]);
-	// 	gph.InsertEdge(a[i], a[t2]);
-	// }
-	// for (int i = 2; i <= count; i++) {
-	// 	int par = i / 2;
-	// 	gph.InsertEdge(a[i], a[par]);
-	// }
-  //
-  //
-	// gph.Print();
+	for (int i = 0; i < count; i++) {
+		heap.InsertHeap(a[i]);
+		gph.InsertVertex(a[i]);
+	}
+
+	heap.PrintHeapLinear();
+	//heap.PrintHeapTree();
+	cout << endl;
+
+	for (int i = 0; i <= count / 2 - 1; i++) {
+		int t1 = 2 * i + 1;
+		int t2 = 2 * i + 2;
+		gph.InsertEdge(heap[i], heap[t1]);
+    if (t2 < count)
+		  gph.InsertEdge(heap[i], heap[t2]);
+	}
+	for (int i = 1; i < count; i++) {
+		int par = (i-1) / 2 ;
+		gph.InsertEdge(heap[i], heap[par]);
+	}
+	gph.Print();
 }
 
 void e11() {
@@ -197,14 +164,4 @@ void e11() {
     std::cout << "\n";
     vertex = vertex->nextVertex;
   }
-	// for (int i = 0; i < vertexCount; i++) {
-	// 	printTableCell(vertexDataArr[i], cellWidth);
-	// 	for (int j = 0; j < vertexCount; j++) {
-	// 		if (gph.GetVertex(vertexDataArr[i])->outDegree >= 1 &&
-  //     gph.GetVertex(vertexDataArr[i])->firstEdge->destination->data == vertexDataArr[j])
-	// 			printTableCell(1, cellWidth);
-	// 		else printTableCell("0", cellWidth);
-	// 	}
-	// 	cout << "\n";
-	// }
 }
