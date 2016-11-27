@@ -82,15 +82,18 @@ void buildMaxheap(int *a, int n)
 
 
 void e1() {
-  int n, temp = 0;
+  int n;
+  int* arr;
 	cout << "\nNhap so phan tu: ";
-	cin >> n;
+	n = getInt();
+  arr = new int[n];
 	AVLTree avl = AVLTree();
 	for (int i = 0; i < n; i++) {
 		cout << "arr[" << i + 1 << "]= ";
-		cin >> temp;
-		avl.AVLInsert(temp);
+		arr[i] = getInt();
 	}
+  for (int i = 0; i < n; i++)
+    avl.AVLInsert(arr[i]);
 	cout << endl;
   // print AVLTree
 	avl.PrintAVL();
