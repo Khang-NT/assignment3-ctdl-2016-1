@@ -177,7 +177,7 @@ void Node::DeleteLeftBalance(Node*& root, bool& shorter) {
 	}
 	else {
 		Node* leftTree = root->left;
-		if (leftTree->balance = RIGHT) {
+		if ((leftTree->balance = RIGHT)) {
 			Node* rightTree = leftTree->right;
 			if (rightTree->balance == RIGHT) {
 				leftTree->balance = LEFT;
@@ -230,7 +230,7 @@ Node* Node::AVLDelete(Node*& root, int delData, bool& shorter, bool& success){
 	}
 	else {
 		Node* deleteNode = root;
-		
+
 		if (deleteNode->right == NULL) {
 			Node* newRoot = root->left;
 			success = true;

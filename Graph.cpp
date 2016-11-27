@@ -36,7 +36,7 @@ Vertex::~Vertex() {
 	Edge *e = firstEdge;
 	while (e != NULL) {
 		Edge *tmpE = e;
-		e->nextEdge;
+		e = e->nextEdge;
 		delete tmpE;
 	}
 }
@@ -68,7 +68,7 @@ Graph::~Graph() {
 	Vertex* v = gHead;
 	while (v != NULL) {
 		Vertex *tmpV = v;
-		v->nextVertex;
+		v = v->nextVertex;
 		delete tmpV;
 	}
 }
@@ -105,7 +105,7 @@ bool Graph::InsertVertex(int vData) {
 		size++;
 		return true;
 	}
-	
+
 	Vertex* pTemp = gHead;
 	Vertex* pTail = NULL;
 	while (pTemp != NULL) {
