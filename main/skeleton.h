@@ -7,6 +7,7 @@
 #include "../Heap.h"
 #include "../Node.h"
 #include "../AVLTree.h"
+
 /* Define entrance funcs foreach missions */
 
 void e1();
@@ -33,14 +34,15 @@ void e17();
  * Get int value from standard input, handle error and retry if any.
  * @return An integer value read from standard input.
  */
-int getInt();
+int                      getInt();
 
 /**
  * Reusable func: Parse graph from file, using {@link ReadArrayInputOfGraph}.
- * @param fileName The relative path to file contain graph data ("input/E13.txt", e.g).
+ * @param fileName The relative path to file contain graph data
+ *("input/E13.txt", e.g).
  * @return The (pointer of) graph which has data given in input file.
  */
-Graph* graphReader(string fileName);
+Graph                  * graphReader(string fileName);
 
 /**
  * Reusable func: Print content in space with fixed width and align to left.
@@ -49,6 +51,7 @@ Graph* graphReader(string fileName);
  *
  * Generic type T - any type has operator "<<".
  */
-template<typename T> void printTableCell(T content, int cellWidth);
+template<typename T>void printTableCell(T   content,
+                                        int cellWidth);
 
-#endif
+#endif // ifndef SKELETION_H
