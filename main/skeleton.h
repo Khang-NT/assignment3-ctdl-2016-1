@@ -30,6 +30,12 @@ void e17();
 // Helper methods
 
 /**
+ * Get int value from standard input, handle error and retry if any.
+ * @return An integer value read from standard input.
+ */
+int getInt();
+
+/**
  * Reusable func: Parse graph from file, using {@link ReadArrayInputOfGraph}.
  * @param fileName The relative path to file contain graph data ("input/E13.txt", e.g).
  * @return The (pointer of) graph which has data given in input file.
