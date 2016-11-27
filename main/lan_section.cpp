@@ -194,6 +194,7 @@ void e11() {
         printTableCell("-", cellWidth);
       vertex2 = vertex2->nextVertex;
     }
+    std::cout << "\n";
     vertex = vertex->nextVertex;
   }
 	// for (int i = 0; i < vertexCount; i++) {
