@@ -54,6 +54,11 @@ class Edge;
 class Vertex {
 public:
 	/**
+	* \brief Destructor
+	*/
+	~Vertex();
+
+	/**
 	* \var data
 	* \brief Vertex data
 	*/
@@ -107,6 +112,7 @@ public:
 //This class helps we to connect Vertices in a graph
 class Edge {
 public:
+
 	/**
 	* \var destination
 	* \brief The Vertex that this Edge will point to.
@@ -142,6 +148,11 @@ public:
 */
 class Graph {
 public:
+	/**
+	* \brief Graph
+	*/
+	~Graph();
+
 	/**
 	* \var gHead
 	* \brief Store the first Vertex inserted into this Graph. \N

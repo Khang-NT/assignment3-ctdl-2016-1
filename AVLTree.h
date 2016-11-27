@@ -27,28 +27,6 @@ using namespace std;
 * Although data duplication is common in real-life applications, it is avoided here to ease the workload of this assignment.\n
 */
 class AVLTree {
-protected:
-	/**
-	* \cond
-	*/
-	Node* RotateRight();
-
-	Node* RotateLeft();
-
-	void LeftBalance(bool& taller);
-
-	void RightBalance(bool& taller);
-
-	Node* Insert(Node* newNode, bool& taller);
-
-	void DeleteRightBalance(bool& shorter);
-
-	void DeleteLeftBalance(bool& shorter);
-
-	Node* Delete(int delData, bool& shorter, bool& success);
-	/**
-	* \endcond
-	*/
 
 public:
 	/**

@@ -32,6 +32,15 @@ Vertex::Vertex(int _data) {
 	firstEdge = NULL;
 }
 
+Vertex::~Vertex() {
+	Edge *e = firstEdge;
+	while (e != NULL) {
+		Edge *tmpE = e;
+		e->nextEdge;
+		delete tmpE;
+	}
+}
+
 //*************************//
 //Edge class implementation//
 //*************************//
@@ -53,6 +62,15 @@ Graph::Graph() {
 Graph::Graph(Vertex* _gHead) {
 	gHead = _gHead;
 	size = 1;
+}
+
+Graph::~Graph() {
+	Vertex* v = gHead;
+	while (v != NULL) {
+		Vertex *tmpV = v;
+		v->nextVertex;
+		delete tmpV;
+	}
 }
 
 bool Graph::InsertVertex(Vertex* v) {
