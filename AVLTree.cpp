@@ -56,7 +56,8 @@ bool AVLTree::AVLDelete(int delData) {
 }
 
 void AVLTree::PrintAVL() {
-	root->PrintNode();
+	if (root)
+		root->PrintNode();
 }
 
 void AVLTree::ArrayToAVL(int arr[], int length) {
