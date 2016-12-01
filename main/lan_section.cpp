@@ -84,25 +84,20 @@ void e1() {
 }
 
 void e3() {
-    AVLTree avl = AVLTree();
-    int    *a;
-    int     count;
+    AVLTree avl = avlReader("input/E3.txt");
 
-    ReadArrayInput("input/E3.txt", a, count);
+    avl->PrintAVL();
 
-    for (int i = 0; i < count; i++) {
-        avl.AVLInsert(a[i]);
-    }
-    avl.PrintAVL();
-
-    int k = EvenNumber(avl.root);
+    int k = EvenNumber(avl->root);
     cout << "So cac nut chan co tren cay: " << k << endl;
 
-    int h = OddNumber(avl.root);
+    int h = OddNumber(avl->root);
     cout << "So cac nut le co tren cay: " << h << endl;
 
-    int m = Prime(avl.root);
+    int m = Prime(avl->root);
     cout << "So cac nut nguyen to co tren cay: " << m << endl;
+
+    delete avl;
 }
 
 void e10() {
@@ -136,6 +131,8 @@ void e10() {
         gph.InsertEdge(heap[i], heap[par]);
     }
     gph.Print();
+
+    delete[] a;
 }
 
 void e11() {

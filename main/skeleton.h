@@ -34,7 +34,15 @@ void e17();
  * Get int value from standard input, handle error and retry if any.
  * @return An integer value read from standard input.
  */
-int                      getInt();
+int      getInt();
+
+/**
+ * Reusable func: Parse AVL tree from file, using {@link ReadArrayInput}.
+ * @param fileName The relative path to file contain graph data
+ *("input/E16.txt", e.g).
+ * @return The (pointer of) AVL tree which has data given in input file.
+ */
+AVLTree* avlReader(string filename);
 
 /**
  * Reusable func: Parse graph from file, using {@link ReadArrayInputOfGraph}.
@@ -42,7 +50,7 @@ int                      getInt();
  *("input/E13.txt", e.g).
  * @return The (pointer of) graph which has data given in input file.
  */
-Graph                  * graphReader(string fileName);
+Graph  * graphReader(string fileName);
 
 /**
  * Reusable func: Print content in space with fixed width and align to left.
@@ -51,7 +59,8 @@ Graph                  * graphReader(string fileName);
  *
  * Generic type T - any type has operator "<<".
  */
-template<typename T>void printTableCell(T   content,
-                                        int cellWidth);
+template<typename T>
+void printTableCell(T   content,
+                    int cellWidth);
 
 #endif // ifndef SKELETION_H

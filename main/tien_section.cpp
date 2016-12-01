@@ -41,13 +41,19 @@ struct Stack {
     }
 };
 
-void e7() {
+AVLTree* avlReader(string input) {
     AVLTree *avl = new AVLTree();
     int     *arr;
     int      count;
 
-    ReadArrayInput("input/E7.txt", arr, count);
+    ReadArrayInput(input, arr, count);
     avl->ArrayToAVL(arr, count);
+    delete[] arr;
+    return avl;
+}
+
+void e7() {
+    AVLTree *avl = avlReader("input/E7.txt");
 
     avl->PrintAVL();
 
