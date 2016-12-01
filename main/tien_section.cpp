@@ -186,7 +186,6 @@ void e16() {
         int visitedCount = visit(vertex, vertex->data);
 
         if (visitedCount < vertexCount) {
-            std::cout << visitedCount << '\n';
             std::cout << "The graph is NOT strongly connected." << '\n';
             return;
         }
