@@ -78,6 +78,10 @@ int main() {
             e7();
             break;
 
+        case 8:
+            e8();
+            break;
+
         case 10:
             e10();
             break;
