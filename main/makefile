@@ -2,7 +2,7 @@ all: app_flow
 clean:
 	rm -f *.o app_flow.bin
 run:
-	chmod +x app_flow && ./app_flow
+	chmod +x app_flow && ./app_flow.bin
 
 app_flow: app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o khang_section.o lan_section.o long_section.o
 	g++ app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o khang_section.o \
