@@ -41,16 +41,6 @@ struct Stack {
     }
 };
 
-int seach(Heap heap, int& tcout, int data, int count) {
-    for (int i = 0; i < count; i++) {
-        if (heap[i] == data) {
-            tcout = i;
-            return tcout;
-        }
-    }
-    return -1;
-}
-
 void e7() {
     AVLTree *avl = new AVLTree();
     int     *arr;
@@ -148,4 +138,59 @@ void e8() {
     delete heap;
     delete stack1;
     delete stack2;
+}
+
+/**
+ * Recursive func: travel in graph, count how many vertex visited
+ * @param vertex The vertex to be visited.
+ * @param visitedFlag The flag to mark the visited vertex.
+ */
+int visit(Vertex *vertex, int visitedFlag) {
+    int visitedCount = 1;
+
+    vertex->processed = visitedFlag;
+    Edge *edge = vertex->firstEdge;
+
+    while (edge) {
+        if (edge->destination->processed != visitedFlag) {
+            visitedCount += visit(edge->destination, visitedFlag);
+        }
+        edge = edge->nextEdge;
+    }
+    return visitedCount;
+}
+
+void e16() {
+    Graph  *graph = graphReader("input/E16.txt");
+    Vertex *vertex;
+
+    graph->Print();
+
+    int vertexCount = 0;
+
+    vertex = graph->gHead;
+
+    while (vertex) {
+        vertexCount++;
+        vertex = vertex->nextVertex;
+    }
+
+    if (vertexCount == 0) {
+        std::cout << "Graph is empty" << '\n';
+        return;
+    }
+
+    vertex = graph->gHead;
+
+    while (vertex) {
+        int visitedCount = visit(vertex, vertex->data);
+
+        if (visitedCount < vertexCount) {
+            std::cout << visitedCount << '\n';
+            std::cout << "The graph is NOT strongly connected." << '\n';
+            return;
+        }
+        vertex = vertex->nextVertex;
+    }
+    std::cout << "Graph is strongly connected." << '\n';
 }
