@@ -95,3 +95,30 @@ void e6() {
     std::cout << "Final graph:" << '\n';
     gph->Print();
 }
+
+void avlToGraph(Node *root, Graph *graph) {
+    if (root->left) {
+        graph->InsertEdge(root->data, root->left->data);
+        avlToGraph(root->left, graph);
+    }
+
+    if (root->right) {
+        graph->InsertEdge(root->data, root->right->data);
+        avlToGraph(root->right, graph);
+    }
+}
+
+void e9() {
+    AVLTree *avl = avlReader("input/E9.txt");
+
+    avl->PrintAVL();
+
+    Graph *graph = new Graph();
+
+    if (avl->root) avlToGraph(avl->root, graph);
+
+    graph->Print();
+
+    delete avl;
+    delete graph;
+}
