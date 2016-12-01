@@ -84,7 +84,7 @@ void e1() {
 }
 
 void e3() {
-    AVLTree avl = avlReader("input/E3.txt");
+    AVLTree *avl = avlReader("input/E3.txt");
 
     avl->PrintAVL();
 
