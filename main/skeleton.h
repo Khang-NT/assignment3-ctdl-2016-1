@@ -39,21 +39,33 @@ int      getInt();
 /**
  * Reusable func: Parse AVL tree from file, using {@link ReadArrayInput}.
  * @param fileName The relative path to file contain graph data
- *("input/E16.txt", e.g).
+ * ("input/E16.txt", e.g).
  * @return The (pointer of) AVL tree which has data given in input file.
  */
 AVLTree* avlReader(string filename);
 
 /**
- * Reusable func: Parse graph from file, using {@link ReadArrayInputOfGraph}.
+ * Reusable func: Parse Graph from file, using {@link ReadArrayInputOfGraph}.
  * @param fileName The relative path to file contain graph data
- *("input/E13.txt", e.g).
- * @return The (pointer of) graph which has data given in input file.
+ * ("input/E13.txt", e.g).
+ * @return The (pointer of) Graph which has data given in input file.
  */
 Graph  * graphReader(string fileName);
 
 /**
- * Reusable func: Print content in space with fixed width and align to left.
+ * Reusable func: Parse Graph from an adjacency matrix present in the input
+ *file,
+ * using {@link ReadAdjacencyMat} to read matrix.
+ * @param fileName The relative path to file contain graph data
+ * @param printMatrix (optional) print matrix to standard output.
+ * ("input/E13.txt", e.g).
+ * @return The (pointer of) Graph which has data given in input file.
+ */
+Graph  * readGraphFromMatrix(string filename,
+                             bool   printMatrix = true);
+
+/**
+ * Reusable func: Print content in a space with fixed width (align to left).
  * @param content The content to be printed.
  * @param cellWidth The width of cell contain the content.
  *
