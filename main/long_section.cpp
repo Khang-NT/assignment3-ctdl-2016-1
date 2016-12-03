@@ -291,18 +291,18 @@ EasyNode* graphToAvl(Vertex *vertex) {
     return root;
 }
 
-void e17() {
+Graph* readGraphFromMatrix(string filename, bool printMatrix) {
     int  **matrix;
     int    size;
     Graph *graph = new Graph;
 
-    ReadAdjacencyMat("input/E17b.txt", matrix, size);
+    ReadAdjacencyMat(filename, matrix, size);
 
     for (size_t i = 0; i < size; i++) {
         if (!graph->VertexExist(i + 1)) graph->InsertVertex(i + 1);
 
         for (size_t j = 0; j < size; j++) {
-            std::cout << matrix[i][j] << ' ';
+            if (printMatrix) std::cout << matrix[i][j] << ' ';
 
             if (matrix[i][j]) graph->InsertEdge(i + 1, j + 1);
         }
@@ -311,6 +311,11 @@ void e17() {
     }
     delete matrix;
     matrix = 0;
+    return graph;
+}
+
+void e17() {
+    Graph *graph = readGraphFromMatrix("input/E17b.txt");
 
     graph->Print();
 
