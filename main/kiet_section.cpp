@@ -45,6 +45,13 @@ void e4() {
     heap.PrintHeapTree();
 }
 
+void e15() {
+    Graph *graph = readGraphFromMatrix("input/E15.txt");
+
+    graph->Print();
+    delete graph;
+}
+
 void e12() {
     AVLTree *avlTree = avlReader("input/E12.txt");
 
