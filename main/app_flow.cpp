@@ -62,6 +62,10 @@ int main() {
             e1();
             break;
 
+        case 2:
+            e2();
+            break;
+
         case 3:
             e3();
             break;

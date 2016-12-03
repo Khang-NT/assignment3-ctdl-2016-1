@@ -13,6 +13,23 @@ struct LinkedList {
     }
 };
 
+void e2() {
+    int m;
+    AVLTree *avlTree = avlReader("input/E2.txt");
+
+    avlTree->PrintAVL();
+
+    do  {
+        cout << "Nhap vao nut can xoa (hoac -1 de thoat): ";
+        m = getInt();
+        avlTree->AVLDelete(m);
+        avlTree->PrintAVL();
+    } while (m != -1);
+
+    delete avlTree;
+    avlTree = 0;
+}
+
 void e12() {
     AVLTree *avlTree = avlReader("input/E12.txt");
 
