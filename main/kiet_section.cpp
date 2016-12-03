@@ -30,6 +30,21 @@ void e2() {
     avlTree = 0;
 }
 
+void e4() {
+    int  n;
+    Heap heap;
+
+    cout << "So phan tu cua mang la : ";
+    n = getInt();
+
+    for (int i = 0; i < n; i++)    {
+        cout << "arr[" << i << "] = ";
+        heap.InsertHeap(getInt());
+    }
+    cout << "Ket qua cuoi cung dang cay theo thu tu LNR la : " << endl;
+    heap.PrintHeapTree();
+}
+
 void e12() {
     AVLTree *avlTree = avlReader("input/E12.txt");
 

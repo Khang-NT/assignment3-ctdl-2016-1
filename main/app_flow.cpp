@@ -70,6 +70,10 @@ int main() {
             e3();
             break;
 
+        case 4:
+            e4();
+            break;
+
         case 5:
             e5();
             break;
