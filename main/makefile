@@ -5,9 +5,9 @@ run:
 	chmod +x app_flow && ./app_flow.bin
 
 app_flow: app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o \
-		khang_section.o lan_section.o long_section.o tien_section.o
+		khang_section.o lan_section.o long_section.o tien_section.o kiet_section.o
 	g++ app_flow.o AVLTree.o Node.o Graph.o Heap.o InputHeader.o khang_section.o \
-		lan_section.o long_section.o tien_section.o -o app_flow.bin
+		lan_section.o long_section.o tien_section.o kiet_section.o -o app_flow.bin
 
 app_flow.o: app_flow.cpp
 	g++ -c app_flow.cpp
@@ -38,3 +38,6 @@ long_section.o: long_section.cpp
 
 tien_section.o: tien_section.cpp
 	g++ -c tien_section.cpp
+
+kiet_section.o: kiet_section.cpp
+	g++ -c kiet_section.cpp
