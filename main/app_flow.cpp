@@ -94,6 +94,10 @@ int main() {
             e11();
             break;
 
+        case 12:
+            e12();
+            break;
+
         case 13:
             e13();
             break;
@@ -104,6 +108,10 @@ int main() {
 
         case 16:
             e16();
+            break;
+
+        case 17:
+            e17();
             break;
 
         default:
