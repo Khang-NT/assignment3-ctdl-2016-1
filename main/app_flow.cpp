@@ -4,7 +4,7 @@
 void echoMenu() {
     std::cout << "========================================================\n";
     std::cout << "                          MENU                          \n";
-    std::cout << "1. Basic section" << '\n';
+    std::cout << "1. AVL tree insert" << '\n';
     std::cout << "2. AVL tree delete" << '\n';
     std::cout << "3. Count odd number, even number, prime number nodes" << '\n';
     std::cout << "4. Heap tree insert" << '\n';
