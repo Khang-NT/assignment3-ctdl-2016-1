@@ -134,6 +134,7 @@ void e13() {
     ReadArrayInput("input/E13.txt", arr, count);
     Heap heap;
     heap.ArrayToHeap(arr, count);
+    heap.PrintHeapTree();
 
     // Table configs
     const int cellWidth = 5;
