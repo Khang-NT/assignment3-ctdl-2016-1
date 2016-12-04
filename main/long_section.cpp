@@ -346,9 +346,11 @@ void e17() {
             avlTree->PrintAVL();
             delete avlTree, avlTree   = 0;
             delete easyNode, easyNode = 0;
+            delete graph, graph = 0;
+            return;
         }
-    } else {
-        std::cout << "Given graph (from matrix) is NOT an AVLTree." << '\n';
     }
-    delete graph;
+    std::cout << "Given graph (from matrix) is NOT an AVLTree." << '\n';
+
+    delete graph, graph = 0;
 }
